@@ -1,4 +1,4 @@
-# Weather-Journal App Project
+# Weather-Journal-App Project
 **version 1.0.0**
 
 ##Description
