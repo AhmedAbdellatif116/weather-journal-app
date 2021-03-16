@@ -1,12 +1,12 @@
 /* Global Variables */
 
 // Create a new date instance dynamically with JS
-let d = new Date();
-let newDate = d.getDate()+'.'+ d.getMonth()+'.'+  d.getFullYear();
+let day = new Date();
+let newDate = day.getDate()+'/'+ (day.getMonth()+1)+'/'+  day.getFullYear();
 
 // API key //???
 let baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-let apiKey = '&appid=8f022d8abaa7d7aa856445c927d9be72&units=metric';
+const apiKey = '&appid=8f022d8abaa7d7aa856445c927d9be72&units=metric';
 
 
 document.getElementById('generate').addEventListener('click', callAction);
@@ -22,7 +22,7 @@ function callAction (e) {
 
     .then (function (data) {
         console.log(data);
-        postData('/add', {date: d, temp: data.main.temp, content: getFeelings})
+        postData('/add', {date: newDate, temp: data.main.temp, content: getFeelings})
         .then(updateUI())
     })
        
